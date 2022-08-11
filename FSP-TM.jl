@@ -20,7 +20,7 @@ module FSPTM
         A10 = sparse([j==i ? kon : 0 for i = 0:N, j=0:N])
         A11 = sparse([j==i ? -(kd*i + koff + km) : j==i-1 ? km : j==i+1 ? j*kd  : 0 for i = 0:N, j=0:N])
 
-        A = Matrix(SparseMatrixCSC{BigFloat,Int64}([A00 A01; A10 A11]))
+        A = Matrix(SparseMatrixCSC{Float64,Int64}([A00 A01; A10 A11]))
 
         # Create the SS FSP matrix with designated state is (1,0)
         As = copy(A)
