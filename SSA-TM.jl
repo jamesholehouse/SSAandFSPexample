@@ -40,7 +40,7 @@ module SSATM
     returns:
     - the state vector at the specified times.
     """
-    function SSA(S_time::Int, pars::Array{Float64,1}, tol_time::Real, sp::Real)
+    function SSA(S_time::Int, pars::Vector, tol_time::Real, sp::Real)
 
         sp <= tol_time || error("The storage time period must be less than the total simulation time!")
 
